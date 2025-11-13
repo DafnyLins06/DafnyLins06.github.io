@@ -1,19 +1,204 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Currículo - Dafny Heloá da Silva Lins</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        
+        header {
+            text-align: center;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #2c3e50;
+            margin-bottom: 30px;
+        }
+        
+        header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            color: #7f8c8d;
+            font-size: 1.1em;
+            font-style: italic;
+        }
+        
+        section {
+            margin-bottom: 35px;
+        }
+        
+        section h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        #foto {
+            text-align: center;
+        }
+        
+        #foto img {
+            border-radius: 50%;
+            border: 5px solid #3498db;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .contato-info {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        
+        .contato-info p {
+            margin: 8px 0;
+        }
+        
+        .contato-info a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .contato-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .experiencia-item, .educacao-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+        
+        .experiencia-item h3, .educacao-item h3 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .periodo {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        ul {
+            list-style-position: inside;
+            padding-left: 20px;
+        }
+        
+        ul li {
+            margin: 8px 0;
+            color: #555;
+        }
+        
+        .habilidades-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .habilidade {
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Dafny Heloá da Silva Lins</h1>
-    <p>buscando aprender sempre mais sobre tecnologia</p>
-    </header>
-    <section id="foto">
-        <h2>Foto</h2>
-        <img src="daf.png.jpeg.jpeg" alt="Foto pessoal" height="250" width="200">
-         <p>Educação:Sou estudante do Ensino Médio Integrado em Desenvolvimento de Sistemas, com foco em programação, análise de sistemas, banco de dados e desenvolvimento de aplicações web e mobile.</p>
-    </section>
+    <div class="container">
+        <header>
+            <h1>Dafny Heloá da Silva Lins</h1>
+            <p>Buscando aprender sempre mais sobre tecnologia</p>
+        </header>
+
+        <section id="foto">
+            <h2>Perfil</h2>
+            <img src="daf.png.jpeg.jpeg" alt="Foto pessoal de Dafny Heloá" height="250" width="250">
+        </section>
+
+        <section id="contato">
+            <h2>Contato</h2>
+            <div class="contato-info">
+                <p><strong> E-mail:>dhsl1@aluno.ifal.edu.br</a></p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/DafnyLins06/DafnyLins06.github.io/tree/main" target="_blank">github.com/dafnylins</a></p>
+            </div>
+        </section>
+
+        <section id="educacao">
+            <h2>Educação</h2>
+            <div class="educacao-item">
+                <h3>Ensino Médio Integrado em Desenvolvimento de Sistemas</h3>
+                <p class="periodo">Em andamento</p>
+                <p>Formação técnica com foco em programação, análise de sistemas, banco de dados e desenvolvimento de aplicações web e mobile.</p>
+            </div>
+        </section>
+
+        <section id="experiencia">
+            <h2>Experiência Profissional</h2>
+            <p style="font-size: 0.9em; color: #7f8c8d; font-style: italic; margin-bottom: 20px;">🔹 Experiências fictícias criadas para fins de simulação.</p>
+            
+            <div class="experiencia-item">
+                <h3>Analista de Suporte Técnico – TechNova Solutions</h3>
+                <p class="periodo">2023 – 2024</p>
+                <p>Atendimento técnico a clientes, manutenção de sistemas operacionais e softwares, e suporte à equipe de desenvolvimento na resolução de problemas.</p>
+            </div>
+
+            <div class="experiencia-item">
+                <h3>Estagiário em Desenvolvimento Web – DigitalPoint Agency</h3>
+                <p class="periodo">2022</p>
+                <p>Apoio na criação de sites e interfaces, utilizando HTML, CSS e JavaScript, além de participação em testes e reuniões de equipe.</p>
+            </div>
+
+            <div class="experiencia-item">
+                <h3>Assistente Administrativo – Global Office Ltda.</h3>
+                <p class="periodo">2021</p>
+                <p>Organização de documentos, elaboração de relatórios e utilização de sistemas de gestão para controle de dados administrativos.</p>
+            </div>
+        </section>
+
+        <section id="habilidades">
+            <h2>Habilidades</h2>
+            <div class="habilidades-list">
+                <span class="habilidade">HTML</span>
+                <span class="habilidade">CSS</span>
+                <span class="habilidade">JavaScript</span>
+                <span class="habilidade">Sistemas Operacionais</span>
+                <span class="habilidade">Trabalho em Equipe</span>
+                <span class="habilidade">Suporte Técnico</span>
+                <span class="habilidade">Desenvolvimento Web</span>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
