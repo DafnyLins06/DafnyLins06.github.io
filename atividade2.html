@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cálculo IMC</title>
-<body>
+    <title>Cálculo do IMC</title>
     <style>
-      body {
+        
+    body {
         font-family: Verdana, sans-serif;
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         align-items: center;
@@ -122,8 +123,9 @@
     .sobrepeso { background: #fff3e0; color: #f57c00; }
     .obesidade { background: #ffebee; color: #d32f2f; }
 </style>
-  </head>
-    <body>
+
+</head>
+<body>
     <div class="container">
         <h1>Cálculo do IMC</h1>
     <div class="form-group">
@@ -151,11 +153,13 @@
         <div id="categoria" class="category"></div>
     </div>
 </div>
-      <script>
-        function calcularIMC(){
+
+<script>
+    function calcularIMC() {
         const nome = document.getElementById('nome').value;
         const peso = parseFloat(document.getElementById('peso').value);
         const altura = parseFloat(document.getElementById('altura').value);
+
         if (!nome || !peso || !altura) {
             alert('Por favor, preencha todos os campos!');
             return;
