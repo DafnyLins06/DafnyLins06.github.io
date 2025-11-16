@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo IMC</title>
+<body>
+    <style>
+      body {
+        font-family: Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        align-items: center;
+        padding: 20px;
+    }
+
+    .container {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        max-width: 450px;
+        width: 100%;
+    }
+
+    h1 {
+        color: #0a0a0c;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    label {
+        color: #555;
+        font-weight: 600;
+        margin-bottom: 8px;
+        font-size: 0.95em;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px 15px;
+        border: 2px solid #e0e0e0;
+        border-radius: 10px;
+        font-size: 1em;
+        transition: all 0.3s;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: #060607;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    button {
+        width: 100%;
+        padding: 15px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.1em;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+    }
+
+    button:active {
+        transform: translateY(0);
+    }
+
+    .result {
+        margin-top: 25px;
+        padding: 20px;
+        background: #f8f9ff;
+        border-radius: 10px;
+        border-left: 4px solid #667eea;
+        display: none;
+    }
+
+    .result.show {
+        display: block;
+        animation: slideIn 0.4s ease;
+    }
+
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .result-text {
+        color: #333;
+        font-size: 1.1em;
+        line-height: 1.6;
+    }
+
+    .imc-value {
+        color: #667eea;
+        font-weight: bold;
+        font-size: 1.3em;
+    }
+
+    .category {
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 8px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .baixo-peso { background: #e3f2fd; color: #1976d2; }
+    .peso-normal { background: #e8f5e9; color: #388e3c; }
+    .sobrepeso { background: #fff3e0; color: #f57c00; }
+    .obesidade { background: #ffebee; color: #d32f2f; }
+</style>
+  </head>
+    <body>
+    <div class="container">
+        <h1>Cálculo do IMC</h1>
+    <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" placeholder="Digite seu nome">
+    </div>
+
+    <div class="form-group">
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" placeholder="Ex: 70" step="0.1" min="0">
+    </div>
+
+    <div class="form-group">
+        <label for="altura">Altura (m):</label>
+        <input type="number" id="altura" placeholder="Ex: 1.75" step="0.01" min="0">
+    </div>
+
+    <button onclick="calcularIMC()">Calcular IMC</button>
+
+    <div id="resultado" class="result">
+        <div class="result-text">
+            Olá, <strong id="nomeResultado"></strong>.<br>
+            Seu IMC é de <span class="imc-value" id="imcValor"></span>
+        </div>
+        <div id="categoria" class="category"></div>
+    </div>
+</div>
+      <script>
+        function calcularIMC(){
+        const nome = document.getElementById('nome').value;
+        const peso = parseFloat(document.getElementById('peso').value);
+        const altura = parseFloat(document.getElementById('altura').value);
+        if (!nome || !peso || !altura) {
+            alert('Por favor, preencha todos os campos!');
+            return;
+        }
+
+        if (altura <= 0 || peso <= 0) {
+            alert('Por favor, insira valores válidos!');
+            return;
+        }
+
+        const imc = peso / (altura * altura);
+        const imcFormatado = imc.toFixed(2);
+
+        let categoria = '';
+        let classeCategoria = '';
+
+        if (imc < 18.5) {
+            categoria = 'Baixo peso';
+            classeCategoria = 'baixo-peso';
+        } else if (imc < 25) {
+            categoria = 'Peso normal';
+            classeCategoria = 'peso-normal';
+        } else if (imc < 30) {
+            categoria = 'Sobrepeso';
+            classeCategoria = 'sobrepeso';
+        } else {
+            categoria = 'Obesidade';
+            classeCategoria = 'obesidade';
+        }
+
+        document.getElementById('nomeResultado').textContent = nome;
+        document.getElementById('imcValor').textContent = imcFormatado;
+        
+        const categoriaDiv = document.getElementById('categoria');
+        categoriaDiv.textContent = categoria;
+        categoriaDiv.className = 'category ' + classeCategoria;
+
+        const resultado = document.getElementById('resultado');
+        resultado.classList.add('show');
+    }
+
+    document.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            calcularIMC();
+        }
+    });
+</script>
+</body>
+</html>
